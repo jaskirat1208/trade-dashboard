@@ -19,6 +19,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('record/', include('record-trades.urls')),
+    path('record/', include('record_trades.urls')),
     path('admin/', admin.site.urls),
 ]
