@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.admindocs',
     'record_trades.apps.RecordTradesConfig',
     'django.contrib.admin',
     'django.contrib.auth',

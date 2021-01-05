@@ -20,5 +20,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('record/', include('record_trades.urls')),
-    path('admin/', admin.site.urls),
+    path('admin/docs/', include('django.contrib.admindocs.urls')),
+    path('admin/', admin.site.urls)
 ]
