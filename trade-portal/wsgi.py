@@ -1,5 +1,5 @@
 """
-WSGI config for trade_recorder project.
+WSGI config for trade-portal project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'trade_recorder.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'trade-portal.settings')
 
 application = get_wsgi_application()

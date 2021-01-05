@@ -1,0 +1,2 @@
+from .create_new_trade_view import CreateNewTradeView
+from .get_all_trades_view import GetAllTradesView
