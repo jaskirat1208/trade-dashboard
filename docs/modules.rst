@@ -1,8 +1,8 @@
-trade_recorder
+trade-portal
 ==============
 
 .. toctree::
    :maxdepth: 4
 
    manage
-   trade_recorder
+   record_trades
