@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     # Custom open source applications
     'crispy_forms',
     'django_tables2',
+    'django_filters',
+    'django_property_filter',
 
     # Template django applications
     'django.contrib.admindocs',
