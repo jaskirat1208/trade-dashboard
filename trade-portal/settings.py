@@ -29,8 +29,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admindocs',
+    # User created applications
     'record_trades.apps.RecordTradesConfig',
+
+    # Custom open source applications
+    'crispy_forms',
+    'django_tables2',
+
+    # Template django applications
+    'django.contrib.admindocs',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -143,3 +150,5 @@ LOGGING = {
         'level': 'INFO'
     }
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

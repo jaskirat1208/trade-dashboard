@@ -14,9 +14,9 @@ class CreateNewTradeView(FormView):
     **Template:**
 
     """
-    template_name = '../templates/index.html'
+    template_name = '../templates/create_new_trade.html'
     form_class = CreateNewTradeForm
-    success_url = '/record'
+    success_url = '/record/get_all_trades'
     logger = logging.getLogger('trade.record')
 
     def form_valid(self, form):
