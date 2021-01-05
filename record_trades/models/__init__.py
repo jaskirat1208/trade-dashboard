@@ -1,4 +1,1 @@
-"""
-"""
-
 from .trade import Trade
