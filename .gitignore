@@ -1,1 +1,5 @@
 db.sqlite3
+/record_trades/migrations/0001_initial.py
+/record_trades/migrations/0002_remove_trade_action_taken.py
+/record_trades/migrations/0003_trade_action_taken.py
+/record_trades/migrations/__init__.py
