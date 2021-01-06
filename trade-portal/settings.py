@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_tables2',
     'django_filters',
-    'django_property_filter',
 
     # Template django applications
     'django.contrib.admindocs',
