@@ -11,7 +11,7 @@ class TradeAdmin(admin.ModelAdmin):
 
     empty_value_display = ''
     fields = ('trade_date', 'expiry_date', 'b_ccy', 'alt_ccy', 'strike', 'yield_rate', 'notional')
-    list_display = ('id', 'trade_date', 'expiry_date', 'ccy', 'strike', 'yield_rate', 'notional')
+    list_display = ('id', 'trade_date', 'expiry_date', 'ccy', 'strike', 'yield_rate', 'notional', 'status')
 
     @staticmethod
     def ccy(obj):
