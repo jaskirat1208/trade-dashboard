@@ -10,7 +10,7 @@ from record_trades.models import Trade
 class ViewTradeTable(tables.Table):
     status_color_map = {
         constants.TRADE_TYPE_ACTIVE: 'badge badge-primary',
-        constants.TRADE_TYPE_COMPLETED: 'badge badge-primary',
+        constants.TRADE_TYPE_COMPLETED: 'badge badge-success',
         constants.TRADE_TYPE_ACTION_REQUIRED: 'badge badge-warning'
     }
 
@@ -27,7 +27,7 @@ class ViewTradeTable(tables.Table):
         row_attrs = {
             "data-id": lambda record: record.pk
         }
-        exclude = ('id',)
+        exclude = ('id', 'action_taken')
 
     def render_row_number(self):
         return next(self.counter)
