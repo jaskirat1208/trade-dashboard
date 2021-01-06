@@ -33,8 +33,8 @@ A dashboard primarily meant for record-keeping of DCI trades.
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-A lot of firms these days are trying to perform trades over different asset classes for capital appreciation. Some trades 
-could be for options, derivatives, structured notes or maybe FX. 
+A lot of non financial-services firms these days are trying to perform trades over different asset classes expecting 
+capital appreciation. Some trades could involve options, derivatives, structured notes or maybe FX. 
 - Most of the firms do not really have an efficient means of record-keeping. 
 - Some do spend some efforts for developing book-keeping dashboards, however, this project could potentially save a 
   significant amount of development time, once it is in a good shape. 
