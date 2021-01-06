@@ -8,14 +8,16 @@ from record_trades.models import Trade
 
 
 class ViewTradeTable(tables.Table):
-    status_color_map = {
-        constants.TRADE_TYPE_ACTIVE: 'badge badge-primary',
-        constants.TRADE_TYPE_COMPLETED: 'badge badge-success',
-        constants.TRADE_TYPE_ACTION_REQUIRED: 'badge badge-warning'
-    }
 
     row_number = tables.Column(empty_values=(), orderable=False)
-    status = tables.Column('Status', orderable=False)
+    status = tables.TemplateColumn(
+        orderable=False, template_name='../templates/complete_trade_btn.html',
+        extra_context={
+            'active': constants.TRADE_TYPE_ACTIVE,
+            'complete': constants.TRADE_TYPE_COMPLETED,
+            'action_req': constants.TRADE_TYPE_ACTION_REQUIRED
+        }
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -31,6 +33,3 @@ class ViewTradeTable(tables.Table):
 
     def render_row_number(self):
         return next(self.counter)
-
-    def render_status(self, value):
-        return format_html('<span class="{}">{}</span>', self.status_color_map[value], value)

@@ -1,0 +1,11 @@
+<a href="{% url 'update_trade' record.id %}" >
+    {% if value == active %}
+        <span class="badge badge-primary" >{{value}}</span>
+    {% elif value == complete %}
+        <span class="badge badge-success" >{{value}}</span>
+    {% elif value == action_req %}
+        <span class="badge badge-success" >{{value}}</span>
+    {% else %}
+        <span class="badge badge-danger" >Unsupported action</span>
+    {% endif %}
+</a>
