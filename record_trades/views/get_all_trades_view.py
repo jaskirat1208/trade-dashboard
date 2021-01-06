@@ -14,4 +14,3 @@ class GetAllTradesView(SingleTableView):
     table_class = ViewTradeTable
     paginator_class = LazyPaginator
 
-

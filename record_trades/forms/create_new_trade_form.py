@@ -11,6 +11,8 @@ class CreateNewTradeForm(forms.ModelForm):
     ``Form``
         A boilerplate form created with :model:`record_trades.Trade` as the underlying model
     """
+
+    # Dates
     trade_date = forms.DateField(
         widget=forms.TextInput(attrs={'type': 'date'})
     )
@@ -19,8 +21,13 @@ class CreateNewTradeForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'type': 'date'})
     )
 
-    b_ccy = forms.ChoiceField(choices=map(lambda r: (r, r), ccy.all()))
-    alt_ccy = forms.ChoiceField(choices=map(lambda r: (r, r), ccy.all()))
+    # Form widget for currencies
+    b_ccy = forms.ChoiceField(
+        label='Base currency', choices=map(lambda r: (r, r), ccy.all()), help_text='Base currency'
+    )
+    alt_ccy = forms.ChoiceField(
+        label='Alternate currency', choices=map(lambda r: (r, r), ccy.all()), help_text='Alternate currency'
+    )
 
     class Meta:
         model = Trade

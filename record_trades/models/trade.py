@@ -10,7 +10,7 @@ class Trade(models.Model):
     id = models.AutoField('Trade ID', primary_key=True)
     trade_date = models.DateField('Trade Start Date')
     expiry_date = models.DateField('Trade End Date')
-    strike = models.FloatField('Strike', help_text='Ratio of primary vs secondary currency')
+    strike = models.FloatField('Strike', help_text='Strike ratio of primary vs secondary currency')
     yield_rate = models.FloatField('Yield(%)', help_text='Annualized Rate of Return')
     b_ccy = models.CharField('Base currency', max_length=10)
     alt_ccy = models.CharField('Alternate currency', max_length=10)
