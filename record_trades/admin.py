@@ -10,7 +10,7 @@ class TradeAdmin(admin.ModelAdmin):
     """
 
     empty_value_display = ''
-    fields = ('trade_date', 'expiry_date', 'b_ccy', 'alt_ccy', 'strike', 'yield_rate', 'notional')
+    fields = ('trade_date', 'expiry_date', 'b_ccy', 'alt_ccy', 'strike', 'yield_rate', 'notional', 'action_taken')
     list_display = ('id', 'trade_date', 'expiry_date', 'ccy', 'strike', 'yield_rate', 'notional', 'status')
 
     @staticmethod

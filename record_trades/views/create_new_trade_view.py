@@ -10,13 +10,11 @@ class CreateNewTradeView(FormView):
 
     ``Trade``
         An instance of :model:`record_trades.Trade`.
-
-    **Template:**
-
     """
+
     template_name = '../templates/create_new_trade.html'
     form_class = CreateNewTradeForm
-    success_url = '/record/get_all_trades'
+    success_url = '/'
     logger = logging.getLogger('trade.record')
 
     def form_valid(self, form):

@@ -1,21 +1,22 @@
 import itertools
 
 import django_tables2 as tables
-from django.utils.html import format_html
 
 import constants
 from record_trades.models import Trade
 
 
 class ViewTradeTable(tables.Table):
-    status_color_map = {
-        constants.TRADE_TYPE_ACTIVE: 'badge badge-primary',
-        constants.TRADE_TYPE_COMPLETED: 'badge badge-primary',
-        constants.TRADE_TYPE_ACTION_REQUIRED: 'badge badge-warning'
-    }
 
     row_number = tables.Column(empty_values=(), orderable=False)
-    status = tables.Column('Status', orderable=False)
+    status = tables.TemplateColumn(
+        orderable=False, template_name='../templates/complete_trade_btn.html',
+        extra_context={
+            'active': constants.TRADE_TYPE_ACTIVE,
+            'complete': constants.TRADE_TYPE_COMPLETED,
+            'action_req': constants.TRADE_TYPE_ACTION_REQUIRED
+        }
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -27,10 +28,7 @@ class ViewTradeTable(tables.Table):
         row_attrs = {
             "data-id": lambda record: record.pk
         }
-        exclude = ('id',)
+        exclude = ('id', 'action_taken')
 
     def render_row_number(self):
         return next(self.counter)
-
-    def render_status(self, value):
-        return format_html('<span class="{}">{}</span>', self.status_color_map[value], value)

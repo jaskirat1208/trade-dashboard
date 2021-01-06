@@ -15,6 +15,11 @@ class Trade(models.Model):
     b_ccy = models.CharField('Base currency', max_length=10)
     alt_ccy = models.CharField('Alternate currency', max_length=10)
     notional = models.IntegerField('Notional', help_text='Assets affected by Trade')
+    action_taken = models.BooleanField(
+        'Action taken',
+        help_text='Action has been taken to check the correct amt transferred',
+        default=False
+    )
 
     @property
     def status(self):
@@ -28,6 +33,8 @@ class Trade(models.Model):
 
         now = timezone.now()
         if self.expiry_date < now.date():
+            if self.action_taken:
+                return constants.TRADE_TYPE_COMPLETED
             return constants.TRADE_TYPE_ACTION_REQUIRED
 
         return constants.TRADE_TYPE_ACTIVE
