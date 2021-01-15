@@ -42,14 +42,42 @@ capital appreciation. Some trades could involve options, derivatives, structured
 This project is a means of creating a framework that can do an independent record-keeping for FX based **Dual currency
 investment(DCI)** trades. Learn more about a typical DCI trade [here][dci-trade-url].
 
-## Overview
-This is a full stack project developed using django.
+## Demo
+### View exectuted trades:
+Using this dashboard, you can effectively do the bookkeeping for different trades that you perform. 
+After you exit a trade, in this when the holding period of DCI expires, you need to check if correct 
+amount has been deposited into your accounts. Using this dashboard, you can keep a track
+of all your trades by filtering on trade status: 
+- You have exited the trade:
+  - **Completed**: You have checked that correct amounts have been deposited
+  - **Action Required**: Yet to check the amounts
+- You have not exited the trade:
+  - **Active**: Holding period has not expired yet
+  
+![](extras/all_trades_list.png)
+Note that the buttons corresponding to action required is clickable, however, others are not.
+I'm currently working on adding a dialog box to the same.
+
+### Add new trade
+You can use the following interface for creating a new trade:
+ 
+![](extras/create_new_trade.png)
 
 ## Getting Started
 
 ### Pre-requisites
+This project only runs on python3. Django should be installed as well.
 
 ### Installation
+```
+git clone https://github.com/jaskirat1208/trade-dashboard
+pip install -r requirements.txt
+
+python manage.py makemigrations       // Creating the migrations files
+python manage.py migrate              // Updating the databases
+python manage.py runserver            // Starts a new server on localhost
+```
+You can check the application running on localhost:8080
 
 ### Usage
 
